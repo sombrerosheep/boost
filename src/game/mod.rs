@@ -8,8 +8,6 @@ use playership::PlayerShipPlugin;
 
 impl Plugin for GamePlugin {
     fn build(&self, app: &mut App) {
-        app
-            .add_plugin(PlayerShipPlugin);
+        app.add_plugin(PlayerShipPlugin);
     }
 }
-
