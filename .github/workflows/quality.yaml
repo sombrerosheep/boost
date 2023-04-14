@@ -12,6 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run cargo check
+        run: make check
   test:
     name: Test Suite
     runs-on: ubuntu-latest
