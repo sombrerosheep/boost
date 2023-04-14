@@ -36,6 +36,6 @@ jobs:
         run: sudo apt-get update; sudo apt-get install --no-install-recommends libasound2-dev libudev-dev
         if: runner.os == 'linux'
       - name: Run cargo fmt
-        run: cargo fmt
+        run: make fmt-check
       - name: Run cargo clippy
-        run: cargo clippy
+        run: make clippy
