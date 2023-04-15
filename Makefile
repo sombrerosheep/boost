@@ -16,10 +16,15 @@ test:
 fmt-check:
 	cargo fmt --all -- --check
 
-fmt-apply:
+fmt-save:
 	cargo fmt --all --
 
-fmt: fmt-check
+fmt: fmt-save
 
-clippy:
+clippy-check:
 	cargo clippy -- -D warnings
+
+clippy-save:
+	cargo clippy --fix --allow-staged -- -D warnings
+
+clippy: clippy-save

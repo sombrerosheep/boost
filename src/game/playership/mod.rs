@@ -6,5 +6,5 @@ use bevy::prelude::*;
 pub struct PlayerShipPlugin;
 
 impl Plugin for PlayerShipPlugin {
-    fn build(&self, app: &mut App) {}
+    fn build(&self, _app: &mut App) {}
 }
