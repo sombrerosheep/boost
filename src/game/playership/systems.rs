@@ -11,7 +11,10 @@ pub fn spawn_player(mut commands: Commands) {
         SpriteBundle {
             transform: Transform::from_xyz(400.0, 400.0, 0.0),
             sprite: Sprite {
-                custom_size: Some(Vec2 { x: PLAYERSHIP_SIZE, y: PLAYERSHIP_SIZE }),
+                custom_size: Some(Vec2 {
+                    x: PLAYERSHIP_SIZE,
+                    y: PLAYERSHIP_SIZE,
+                }),
                 color: Color::rgb(0.4, 0.7, 0.3),
                 ..default()
             },
