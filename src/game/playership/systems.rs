@@ -2,8 +2,8 @@ use bevy::prelude::*;
 
 use crate::game::playership::components::*;
 
-const PLAYERSHIP_SPEED: f32 = 125.0;
-const PLAYER_SIZE: f32 = 32.0;
+const PLAYERSHIP_SPEED: f32 = 325.0;
+const PLAYERSHIP_SIZE: f32 = 32.0;
 
 pub fn spawn_player(mut commands: Commands) {
     print!("spawning player");
@@ -11,7 +11,7 @@ pub fn spawn_player(mut commands: Commands) {
         SpriteBundle {
             transform: Transform::from_xyz(400.0, 400.0, 0.0),
             sprite: Sprite {
-                custom_size: Some(Vec2 { x: PLAYER_SIZE, y: PLAYER_SIZE }),
+                custom_size: Some(Vec2 { x: PLAYERSHIP_SIZE, y: PLAYERSHIP_SIZE }),
                 color: Color::rgb(0.4, 0.7, 0.3),
                 ..default()
             },
