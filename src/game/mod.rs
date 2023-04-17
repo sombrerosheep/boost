@@ -23,7 +23,6 @@ pub struct GamePlugin;
 
 impl Plugin for GamePlugin {
     fn build(&self, app: &mut App) {
-        print!("building game plugin");
         app
             // State
             .add_state::<GameState>()

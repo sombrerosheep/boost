@@ -6,7 +6,6 @@ const PLAYERSHIP_SPEED: f32 = 325.0;
 const PLAYERSHIP_SIZE: f32 = 32.0;
 
 pub fn spawn_player(mut commands: Commands) {
-    print!("spawning player");
     commands.spawn((
         SpriteBundle {
             transform: Transform::from_xyz(400.0, 400.0, 0.0),
