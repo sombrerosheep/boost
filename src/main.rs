@@ -2,6 +2,7 @@ use bevy::prelude::*;
 
 mod game;
 mod systems;
+pub mod components;
 
 use game::GamePlugin;
 use systems::*;
@@ -22,7 +23,7 @@ fn main() {
         // State
         .add_state::<AppState>()
         // Startup
-        .add_startup_system(spawn_main_camera)
+
         // Plugins
         .add_plugin(GamePlugin)
         // Systems

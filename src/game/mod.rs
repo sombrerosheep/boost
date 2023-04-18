@@ -1,6 +1,7 @@
 pub mod obstacles;
 pub mod playership;
 mod systems;
+mod cameras;
 
 use bevy::prelude::*;
 use obstacles::nuke::NukePlugin;
@@ -9,7 +10,7 @@ use obstacles::rocket::RocketPlugin;
 use obstacles::satellite::SatellitePlugin;
 use obstacles::spacejunk::SpaceJunkPlugin;
 use playership::PlayerShipPlugin;
-use systems::*;
+use cameras::game_camera::GameCameraPlugin;
 
 #[derive(States, Debug, Clone, Copy, Eq, PartialEq, Hash, Default)]
 pub enum GameState {
@@ -27,13 +28,13 @@ impl Plugin for GamePlugin {
             // State
             .add_state::<GameState>()
             // Plugins
+            .add_plugin(GameCameraPlugin)
             .add_plugin(PlayerShipPlugin)
             .add_plugin(NukePlugin)
             .add_plugin(RockPlugin)
             .add_plugin(RocketPlugin)
             .add_plugin(SatellitePlugin)
-            .add_plugin(SpaceJunkPlugin)
+            .add_plugin(SpaceJunkPlugin);
             // Systems
-            .add_system(move_camera);
     }
 }
