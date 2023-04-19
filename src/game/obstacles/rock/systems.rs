@@ -9,22 +9,23 @@ use rand::prelude::*;
 const ROCK_SIZE: f32 = 32.0;
 
 pub fn spawn_rock(commands: &mut Commands, x: f32, y: f32) -> Entity {
-    let rock_entity = commands.spawn((
-        SpriteBundle {
-            transform: Transform::from_xyz(x, y, 0.0),
-            sprite: Sprite {
-                custom_size: Some(Vec2 {
-                    x: ROCK_SIZE,
-                    y: ROCK_SIZE,
-                }),
-                color: Color::BEIGE,
+    let rock_entity = commands
+        .spawn((
+            SpriteBundle {
+                transform: Transform::from_xyz(x, y, 0.0),
+                sprite: Sprite {
+                    custom_size: Some(Vec2 {
+                        x: ROCK_SIZE,
+                        y: ROCK_SIZE,
+                    }),
+                    color: Color::BEIGE,
+                    ..default()
+                },
                 ..default()
             },
-            ..default()
-        },
-        Rock {},
-    ))
-    .id();
+            Rock {},
+        ))
+        .id();
 
     rock_entity
 }
@@ -44,13 +45,11 @@ pub fn spawn_rocks(
 
             let camera_left = camera_pos.translation.x - game_camera.width / 2.0;
             let camera_top = camera_pos.translation.y + game_camera.width / 2.0;
-            
+
             // spawn a new rock some random place in its y+
-            let random_x = random::<f32>() * game_camera.width as f32
-                + camera_left as f32;
-            let random_y = random::<f32>() * game_camera.height as f32
-                + camera_top;
-            
+            let random_x = random::<f32>() * game_camera.width as f32 + camera_left as f32;
+            let random_y = random::<f32>() * game_camera.height as f32 + camera_top;
+
             spawn_rock(&mut commands, random_x, random_y);
         }
     }

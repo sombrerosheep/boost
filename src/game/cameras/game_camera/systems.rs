@@ -16,10 +16,10 @@ pub fn spawn_game_camera(
             transform: Transform::from_xyz(window.width() / 2.0, window.height() / 2.0, 0.0),
             ..default()
         },
-        GameCamera{
+        GameCamera {
             width: window.width(),
-            height: window.height()
-        }
+            height: window.height(),
+        },
     ));
 }
 
