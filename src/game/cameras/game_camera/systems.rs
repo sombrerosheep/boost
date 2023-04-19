@@ -1,6 +1,8 @@
 use bevy::prelude::*;
 use bevy::window::PrimaryWindow;
 
+use super::components::*;
+
 const CAMERA_SPEED: f32 = 100.0;
 
 pub fn spawn_game_camera(
@@ -13,7 +15,11 @@ pub fn spawn_game_camera(
         Camera2dBundle {
             transform: Transform::from_xyz(window.width() / 2.0, window.height() / 2.0, 0.0),
             ..default()
-        },        
+        },
+        GameCamera{
+            width: window.width(),
+            height: window.height()
+        }
     ));
 }
 

@@ -1,8 +1,8 @@
 pub mod components;
 mod systems;
 
-use bevy::prelude::*;
 use crate::game::GameState;
+use bevy::prelude::*;
 use systems::*;
 
 pub struct GameCameraPlugin;

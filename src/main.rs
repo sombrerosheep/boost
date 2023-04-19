@@ -1,8 +1,8 @@
 use bevy::prelude::*;
 
+pub mod components;
 mod game;
 mod systems;
-pub mod components;
 
 use game::GamePlugin;
 use systems::*;
@@ -23,7 +23,6 @@ fn main() {
         // State
         .add_state::<AppState>()
         // Startup
-
         // Plugins
         .add_plugin(GamePlugin)
         // Systems
