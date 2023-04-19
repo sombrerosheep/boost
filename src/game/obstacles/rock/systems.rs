@@ -47,12 +47,12 @@ pub fn spawn_rocks(
             let camera_top = camera_pos.translation.y + game_camera.width / 2.0;
 
             // spawn a new rock some random place in its y+
-            let random_x = random::<f32>() * game_camera.width as f32 + camera_left as f32;
-            let random_y = random::<f32>() * game_camera.height as f32 + camera_top;
+            let random_x = random::<f32>() * game_camera.width + camera_left;
+            let random_y = random::<f32>() * game_camera.height + camera_top;
 
             spawn_rock(&mut commands, random_x, random_y);
         }
     }
 }
 
-pub fn despawn_rocks_out_of_range() {}
+//pub fn despawn_rocks_out_of_range() {}
