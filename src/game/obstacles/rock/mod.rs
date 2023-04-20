@@ -16,7 +16,11 @@ impl Plugin for RockPlugin {
             .init_resource::<RockSpawnTimer>()
             // OnEnter
             .add_systems(
-                (update_rock_spawn_timer, spawn_rocks).in_set(OnUpdate(GameState::Playing)),
+                (
+                    update_rock_spawn_timer,
+                    spawn_rocks,
+                    despawn_rocks_out_of_range
+                ).in_set(OnUpdate(GameState::Playing)),
             );
     }
 }
