@@ -1,15 +1,16 @@
-use bevy::prelude::*;
-use bevy::diagnostic::*;
 use super::components::*;
 use super::resources::*;
+use bevy::diagnostic::*;
+use bevy::prelude::*;
 
 pub const FPS: DiagnosticId = DiagnosticId::from_u128(288146834822086093791974408528866909483);
-pub const ENTITY_COUNT: DiagnosticId = DiagnosticId::from_u128(187513512115068938494459732780662867798);
+pub const ENTITY_COUNT: DiagnosticId =
+    DiagnosticId::from_u128(187513512115068938494459732780662867798);
 
 pub fn update_fps_text(
     mut text_query: Query<&mut Text, With<FrameRateText>>,
     ui_redraw_timer: Res<DebugUIUpdateTimer>,
-    diagnostics: Res<Diagnostics>
+    diagnostics: Res<Diagnostics>,
 ) {
     if !ui_redraw_timer.timer.finished() {
         return;
@@ -27,7 +28,7 @@ pub fn update_fps_text(
 pub fn update_entity_count_text(
     mut text_query: Query<&mut Text, With<EntityCountText>>,
     ui_redraw_timer: Res<DebugUIUpdateTimer>,
-    diag: Res<Diagnostics>
+    diag: Res<Diagnostics>,
 ) {
     if !ui_redraw_timer.timer.finished() {
         return;
@@ -39,10 +40,12 @@ pub fn update_entity_count_text(
                 text.sections[0].value = format!("Entities: {}", count);
             }
         }
-
     }
 }
 
-pub fn update_debug_ui_redraw_timer(mut ui_redraw_timer: ResMut<DebugUIUpdateTimer>, time: Res<Time>) {
+pub fn update_debug_ui_redraw_timer(
+    mut ui_redraw_timer: ResMut<DebugUIUpdateTimer>,
+    time: Res<Time>,
+) {
     ui_redraw_timer.timer.tick(time.delta());
 }

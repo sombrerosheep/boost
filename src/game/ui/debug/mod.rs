@@ -1,14 +1,14 @@
 pub mod components;
 mod layout;
-mod systems;
 mod resources;
+mod systems;
 
-use bevy::prelude::*;
-use bevy::diagnostic::{FrameTimeDiagnosticsPlugin, EntityCountDiagnosticsPlugin};
 use crate::AppState;
+use bevy::diagnostic::{EntityCountDiagnosticsPlugin, FrameTimeDiagnosticsPlugin};
+use bevy::prelude::*;
 use layout::*;
-use systems::*;
 use resources::DebugUIUpdateTimer;
+use systems::*;
 
 pub struct DebugUIPlugin;
 
@@ -27,9 +27,9 @@ impl Plugin for DebugUIPlugin {
                 (
                     update_fps_text,
                     update_entity_count_text,
-                    update_debug_ui_redraw_timer
+                    update_debug_ui_redraw_timer,
                 )
-                .in_set(OnUpdate(AppState::Game))
+                    .in_set(OnUpdate(AppState::Game)),
             )
             // OnExit
             .add_system(despawn_debug_ui.in_schedule(OnExit(AppState::Game)));

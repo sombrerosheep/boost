@@ -19,8 +19,9 @@ impl Plugin for RockPlugin {
                 (
                     update_rock_spawn_timer,
                     spawn_rocks,
-                    despawn_rocks_out_of_range
-                ).in_set(OnUpdate(GameState::Playing)),
+                    despawn_rocks_out_of_range,
+                )
+                    .in_set(OnUpdate(GameState::Playing)),
             );
     }
 }

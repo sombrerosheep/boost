@@ -8,4 +8,3 @@ pub struct FrameRateText {}
 
 #[derive(Component)]
 pub struct EntityCountText {}
-

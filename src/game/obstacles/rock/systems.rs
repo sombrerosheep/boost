@@ -57,7 +57,7 @@ pub fn spawn_rocks(
 pub fn despawn_rocks_out_of_range(
     mut commands: Commands,
     rock_query: Query<(Entity, &Transform), With<Rock>>,
-    camera_query: Query<(&Transform, &GameCamera)>
+    camera_query: Query<(&Transform, &GameCamera)>,
 ) {
     if let Ok((camera_pos, game_camera)) = camera_query.get_single() {
         let bottom_buffer = 50.0;
@@ -71,5 +71,4 @@ pub fn despawn_rocks_out_of_range(
             }
         }
     }
-
 }
