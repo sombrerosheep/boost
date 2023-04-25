@@ -3,6 +3,10 @@ use super::resources::*;
 use bevy::diagnostic::*;
 use bevy::prelude::*;
 
+// These are held by bevy but don't seem to be exported
+// We can loop through diagnostics and find by name
+// Seems silly to have the .get method but not make the
+// DiagnosticId's accessible?
 pub const FPS: DiagnosticId = DiagnosticId::from_u128(288146834822086093791974408528866909483);
 pub const ENTITY_COUNT: DiagnosticId =
     DiagnosticId::from_u128(187513512115068938494459732780662867798);

@@ -2,7 +2,6 @@ use super::components::*;
 use bevy::prelude::*;
 
 pub fn spawn_debug_ui(mut commands: Commands, asset_server: Res<AssetServer>) {
-    print!("spawning debug ui");
     commands
         .spawn((
             NodeBundle {

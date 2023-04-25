@@ -16,14 +16,20 @@ pub fn spawn_game_camera(
             transform: Transform::from_xyz(window.width() / 2.0, window.height() / 2.0, 0.0),
             ..default()
         },
-        GameCamera {
-            width: window.width(),
-            height: window.height(),
-        },
+        GameCamera {},
     ));
 }
 
-pub fn move_game_camera(mut game_camera: Query<&mut Transform, With<Camera2d>>, time: Res<Time>) {
+pub fn despawn_game_camera(
+    mut commands: Commands,
+    camera_query: Query<Entity, With<GameCamera>>
+) {
+    for camera_entity in camera_query.iter() {
+        commands.entity(camera_entity).despawn();
+    }
+}
+
+pub fn move_game_camera(mut game_camera: Query<&mut Transform, With<GameCamera>>, time: Res<Time>) {
     if let Ok(mut transform) = game_camera.get_single_mut() {
         let move_vec: Vec3 = Vec3::new(0.0, CAMERA_SPEED, 0.0);
 

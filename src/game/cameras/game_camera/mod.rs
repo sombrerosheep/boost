@@ -12,6 +12,9 @@ impl Plugin for GameCameraPlugin {
         app
             // Startup
             .add_system(spawn_game_camera.in_schedule(OnEnter(GameState::Playing)))
-            .add_system(move_game_camera.in_set(OnUpdate(GameState::Playing)));
+            // Systems
+            .add_system(move_game_camera.in_set(OnUpdate(GameState::Playing)))
+            // OnExit
+            .add_system(despawn_game_camera.in_schedule(OnExit(GameState::Playing)));
     }
 }
