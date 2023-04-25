@@ -20,10 +20,7 @@ pub fn spawn_game_camera(
     ));
 }
 
-pub fn despawn_game_camera(
-    mut commands: Commands,
-    camera_query: Query<Entity, With<GameCamera>>
-) {
+pub fn despawn_game_camera(mut commands: Commands, camera_query: Query<Entity, With<GameCamera>>) {
     for camera_entity in camera_query.iter() {
         commands.entity(camera_entity).despawn();
     }

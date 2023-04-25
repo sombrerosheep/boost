@@ -39,10 +39,10 @@ pub fn spawn_rocks(
     mut commands: Commands,
     camera_query: Query<&Transform, With<GameCamera>>,
     window_query: Query<&Window, With<PrimaryWindow>>,
-    spawn_timer: Res<RockSpawnTimer>
+    spawn_timer: Res<RockSpawnTimer>,
 ) {
     let window = window_query.get_single().unwrap();
-    
+
     if spawn_timer.timer.finished() {
         if let Ok(camera_pos) = camera_query.get_single() {
             let camera_left = camera_pos.translation.x - window.width() / 2.0;
@@ -62,10 +62,10 @@ pub fn despawn_rocks_out_of_range(
     mut commands: Commands,
     rock_query: Query<(Entity, &Transform), With<Rock>>,
     camera_query: Query<&Transform, With<GameCamera>>,
-    window_query: Query<&Window, With<PrimaryWindow>>
+    window_query: Query<&Window, With<PrimaryWindow>>,
 ) {
     let window = window_query.get_single().unwrap();
-    
+
     if let Ok(camera_pos) = camera_query.get_single() {
         let bottom_buffer = 50.0;
         let bottom_y = camera_pos.translation.y - window.height() / 2.0 - bottom_buffer;

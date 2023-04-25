@@ -1,9 +1,9 @@
 use bevy::prelude::*;
 use bevy::window::PrimaryWindow;
 
-use rand::prelude::*;
 use super::components::*;
-    
+use rand::prelude::*;
+
 const NUM_STARS: u32 = 25;
 const SPEED: f32 = 50.0;
 const STAR_SIZE: f32 = 1.0;
@@ -11,60 +11,52 @@ const STAR_COLOR: Color = Color::rgb(1.0, 1.0, 1.0);
 
 use crate::game::cameras::game_camera::components::GameCamera;
 
-pub fn spawn_background(
-    mut commands: Commands,
-    window_query: Query<&Window, With<PrimaryWindow>>
-) {
+pub fn spawn_background(mut commands: Commands, window_query: Query<&Window, With<PrimaryWindow>>) {
     let window = window_query.get_single().unwrap();
 
     for _ in 0..NUM_STARS {
         let random_x = random::<f32>() * window.width();
         let random_y = random::<f32>() * window.height();
-        println!("spawning a star at {}x{}", random_x, random_y);
+
         spawn_star(&mut commands, random_x, random_y);
     }
 }
 
-pub fn spawn_star(
-    commands: &mut Commands,
-    x: f32,
-    y: f32
-) -> Entity {
-    let star_entity = commands.spawn((
-        SpriteBundle{
-            transform: Transform::from_xyz(x, y, 0.0),
-            sprite: Sprite {
-                custom_size: Some(Vec2 {
-                    x: STAR_SIZE,
-                    y: STAR_SIZE
-                }),
-                color: STAR_COLOR,
+pub fn spawn_star(commands: &mut Commands, x: f32, y: f32) -> Entity {
+    let star_entity = commands
+        .spawn((
+            SpriteBundle {
+                transform: Transform::from_xyz(x, y, 0.0),
+                sprite: Sprite {
+                    custom_size: Some(Vec2 {
+                        x: STAR_SIZE,
+                        y: STAR_SIZE,
+                    }),
+                    color: STAR_COLOR,
+                    ..default()
+                },
                 ..default()
             },
-            ..default()
-        },
-        BackgroundStar {
-            color: STAR_COLOR.into(),
-        }
-    ))
-    .id();
+            BackgroundStar { color: STAR_COLOR },
+        ))
+        .id();
 
     star_entity
 }
 
 pub fn despawn_background(
     mut commands: Commands,
-    background_star_query: Query<Entity, With<BackgroundStar>>
+    background_star_query: Query<Entity, With<BackgroundStar>>,
 ) {
     for background_star in background_star_query.iter() {
         commands.entity(background_star).despawn();
     }
 }
 
-pub fn update_stars (
-    mut star_query: Query<&mut Transform,  (With<BackgroundStar>, Without<Camera2d>)>,
+pub fn update_stars(
+    mut star_query: Query<&mut Transform, (With<BackgroundStar>, Without<Camera2d>)>,
     camera_query: Query<&Transform, (With<GameCamera>, Without<BackgroundStar>)>,
-    window_query: Query<&Window, With<PrimaryWindow>>
+    window_query: Query<&Window, With<PrimaryWindow>>,
 ) {
     let window = window_query.get_single().unwrap();
 
@@ -80,4 +72,3 @@ pub fn update_stars (
         }
     }
 }
-

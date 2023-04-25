@@ -1,9 +1,9 @@
+mod background;
 pub mod cameras;
 pub mod obstacles;
 pub mod playership;
 mod systems;
 mod ui;
-mod background;
 
 use bevy::prelude::*;
 use cameras::game_camera::GameCameraPlugin;
@@ -17,7 +17,6 @@ use playership::PlayerShipPlugin;
 use background::BackgroundPlugin;
 
 use ui::debug::DebugUIPlugin;
-
 
 #[derive(States, Debug, Clone, Copy, Eq, PartialEq, Hash, Default)]
 pub enum GameState {

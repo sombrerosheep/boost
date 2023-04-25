@@ -5,6 +5,5 @@ pub struct Background {}
 
 #[derive(Component)]
 pub struct BackgroundStar {
-    pub color: Color
+    pub color: Color,
 }
-
