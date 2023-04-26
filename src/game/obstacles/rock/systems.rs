@@ -25,4 +25,3 @@ pub fn spawn_rock(commands: &mut Commands, x: f32, y: f32) -> Entity {
 
     rock_entity
 }
-

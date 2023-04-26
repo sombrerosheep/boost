@@ -5,7 +5,6 @@ use super::components::*;
 use rand::prelude::*;
 
 const NUM_STARS: u32 = 25;
-const SPEED: f32 = 50.0;
 const STAR_SIZE: f32 = 1.0;
 const STAR_COLOR: Color = Color::rgb(1.0, 1.0, 1.0);
 

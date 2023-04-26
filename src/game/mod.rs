@@ -11,7 +11,6 @@ use obstacles::controller::ObstacleControllerPlugin;
 use obstacles::nuke::NukePlugin;
 use obstacles::rocket::RocketPlugin;
 use obstacles::satellite::SatellitePlugin;
-use obstacles::spacejunk::SpaceJunkPlugin;
 use playership::PlayerShipPlugin;
 
 use background::BackgroundPlugin;
@@ -40,7 +39,6 @@ impl Plugin for GamePlugin {
             .add_plugin(NukePlugin)
             .add_plugin(RocketPlugin)
             .add_plugin(SatellitePlugin)
-            .add_plugin(SpaceJunkPlugin)
             .add_plugin(BackgroundPlugin)
             // UI
             .add_plugin(DebugUIPlugin);
