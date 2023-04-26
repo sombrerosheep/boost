@@ -3,3 +3,4 @@ pub mod rock;
 pub mod rocket;
 pub mod satellite;
 pub mod spacejunk;
+pub mod controller;

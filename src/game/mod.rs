@@ -7,8 +7,8 @@ mod ui;
 
 use bevy::prelude::*;
 use cameras::game_camera::GameCameraPlugin;
+use obstacles::controller::ObstacleControllerPlugin;
 use obstacles::nuke::NukePlugin;
-use obstacles::rock::RockPlugin;
 use obstacles::rocket::RocketPlugin;
 use obstacles::satellite::SatellitePlugin;
 use obstacles::spacejunk::SpaceJunkPlugin;
@@ -36,8 +36,8 @@ impl Plugin for GamePlugin {
             // Plugins
             .add_plugin(GameCameraPlugin)
             .add_plugin(PlayerShipPlugin)
+            .add_plugin(ObstacleControllerPlugin)
             .add_plugin(NukePlugin)
-            .add_plugin(RockPlugin)
             .add_plugin(RocketPlugin)
             .add_plugin(SatellitePlugin)
             .add_plugin(SpaceJunkPlugin)
