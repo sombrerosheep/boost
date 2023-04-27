@@ -1,7 +1,8 @@
 use bevy::prelude::*;
 
-const ROCK_SPAWN_TIME_SEC: f32 = 0.3;
-const SPACE_JUNK_SPAWN_TIME_SEC: f32 = 0.35;
+const ROCK_SPAWN_TIME_SEC: f32 = 0.55;
+const SPACE_JUNK_SPAWN_TIME_SEC: f32 = 0.45;
+const SATELLITE_SPAWN_TIME_SEC: f32 = 1.1;
 
 #[derive(Resource)]
 pub struct RockSpawnTimer {
@@ -25,6 +26,19 @@ impl Default for SpaceJunkSpawnTimer {
     fn default() -> SpaceJunkSpawnTimer {
         SpaceJunkSpawnTimer {
             timer: Timer::from_seconds(SPACE_JUNK_SPAWN_TIME_SEC, TimerMode::Repeating),
+        }
+    }
+}
+
+#[derive(Resource)]
+pub struct SatelliteSpawnTimer {
+    pub timer: Timer,
+}
+
+impl Default for SatelliteSpawnTimer {
+    fn default() -> SatelliteSpawnTimer {
+        SatelliteSpawnTimer {
+            timer: Timer::from_seconds(SATELLITE_SPAWN_TIME_SEC, TimerMode::Repeating),
         }
     }
 }

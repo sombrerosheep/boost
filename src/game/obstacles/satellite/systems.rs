@@ -4,17 +4,21 @@ use super::components::Satellite;
 
 const SATELLITE_SIZE: Vec2 = Vec2::new(64.0, 32.0);
 
-pub fn spawn_satellite(mut commands: Commands) {
-    commands.spawn((
-        SpriteBundle {
-            transform: Transform::from_xyz(400.0, 600.0, 0.0),
-            sprite: Sprite {
-                custom_size: Some(SATELLITE_SIZE),
-                color: Color::ALICE_BLUE,
+pub fn spawn_satellite(commands: &mut Commands, x: f32, y: f32) -> Entity {
+    let entity = commands
+        .spawn((
+            SpriteBundle {
+                transform: Transform::from_xyz(x, y, 0.0),
+                sprite: Sprite {
+                    custom_size: Some(SATELLITE_SIZE),
+                    color: Color::ALICE_BLUE,
+                    ..default()
+                },
                 ..default()
             },
-            ..default()
-        },
-        Satellite {},
-    ));
+            Satellite {},
+        ))
+        .id();
+
+    entity
 }
