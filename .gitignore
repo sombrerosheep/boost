@@ -3,3 +3,7 @@
 *~
 \#*\#
 .\#*
+
+# Obsidian plugin data
+notebook/.obsidian/plugins/*
+!notebook/.obsidian/plugins/*/data.json

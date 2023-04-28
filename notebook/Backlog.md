@@ -1,0 +1,82 @@
+- [ ] Randomly spawn obstacles based on time #todo #gameplay
+    - use a single obstacles system with multiple timers
+    - Different rates
+        - Rocks (frequent)
+        - Space Junk (frequent)
+        - Rockets (rare)
+        - Satellites (seldom)
+        - Nukes (very rare)
+- [ ] Spawn obstacles by chance not timers #todo #gameplay 
+    - single cooldown timer (500ms?)
+    - get a random number and spawn an entity
+    - How and when to spawn?
+        - evaluate from least to most likely?
+        - spawn any number that qualify?
+    - 0..100
+        - Space Junk (<80)
+        - Rocks (<70)
+        - Satellites (<60)
+        - Rockets (<40)
+        - Nukes (<20)
+- [ ] Nukes Destroy obstacles within radius #todo #gameplay 
+- [ ] Collisions between obstacles and player I #todo #gameplay #collisions
+    - reduces player health by a bit
+- [ ] Collisions between obstacles and player II #todo #gameplay #collisions 
+    - objects velocity impacts damage taken
+- [ ] Collisions between obstacles and obstacles #todo #gameplay #collisions 
+    - for now they bounce around
+- [ ] Sprites #todo #art
+    - Doesn't need to be much, but something to start with
+- [ ] Main menu #todo #ui
+- [ ] Pause menu #todo #ui 
+- [ ] Game Over #todo #gameplay
+    - as an event?
+- [ ] Game Over Menu #todo #ui
+- [x] Background I #todo #art #gameplay @completed(2023-04-25T21:33:46)
+    - something to indicate movement
+    - randomly spawn stars
+    - cleanup as they fall off
+- [ ] Background II #todo #art #gameplay
+    - On start, visible horizon that fades after a bit
+- [ ] Background III #todo #art #gameplay
+    - slowly fades from blue (earth) to black as you move
+    - Should earth look more destructive and on fire?
+- [ ] Background IV #todo #art #gameplay
+    - stars fade in after a bit 
+    - they'll become more visible as you leave earth
+- [ ] Sound FX #todo #sound #fx
+    - rocket thruster
+    - rock on rock collision (rock on rock)
+    - rock on metal collision (rock on rocket | rock on spacejunk)
+    - metal on metal collision (satellite on rocket, satellite on junk, junk on rocket)
+- [ ] Music? #todo #sound #music
+    - Main Menu
+    - Intro
+    - Gameplay
+    - Game Over
+- [ ] subtle velocity for rocks #todo #gameplay 
+    - always in -y (`+/-x`)
+- [ ] sublte rotation for rocks #todo #gameplay 
+- [x] obstacle controller #todo #gameplay  @completed(2023-04-28T03:40:43)
+    - spawn obstacles at different rates
+    - responsible for despawning off-camera
+    - each type should still have its own despawn system
+- [ ] trajectory for inactive nukes #todo #gameplay 
+    - less than subtle velocity.
+    - these are sort of floating around, out of orbit and off trajectory
+- [ ] trajectory archs for active nukes #todo #gameplay 
+    - we encounter them as they're en-route
+- [ ] AI for rockets #todo #gameplay 
+    - some level of navigation ignoring all obstacles that are not the player
+- [ ] Add camera render layers #todo #architecture
+    - https://bevy-cheatbook.github.io/features/camera.html#render-layers
+    - stars
+    - player/obstacles
+        - should these be together? #question
+- [ ] Implement fuel #todo #gameplay
+    - consumed at a slow rate
+    - movement consumes slightly more
+- [ ] Add UI for fuel #todo #ui
+- [ ] Implement ship health #todo #gameplay
+    - collisions impacts health
+- [ ] Add UI for ship health #todo #ui
