@@ -4,11 +4,11 @@ use bevy::window::PrimaryWindow;
 use super::components::*;
 use rand::prelude::*;
 
+use crate::game::camera::game_camera::components::GameCamera;
+
 const NUM_STARS: u32 = 25;
 const STAR_SIZE: f32 = 1.0;
 const STAR_COLOR: Color = Color::rgb(1.0, 1.0, 1.0);
-
-use crate::game::cameras::game_camera::components::GameCamera;
 
 pub fn spawn_background(mut commands: Commands, window_query: Query<&Window, With<PrimaryWindow>>) {
     let window = window_query.get_single().unwrap();

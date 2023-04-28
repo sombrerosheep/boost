@@ -4,7 +4,7 @@ use bevy::window::PrimaryWindow;
 use rand::prelude::*;
 
 use super::resources::*;
-use crate::game::cameras::game_camera::components::GameCamera;
+use crate::game::camera::game_camera::components::GameCamera;
 use crate::game::obstacles::nuke::{components::*, systems::*};
 use crate::game::obstacles::rock::{components::*, systems::*};
 use crate::game::obstacles::rocket::{components::*, systems::*};

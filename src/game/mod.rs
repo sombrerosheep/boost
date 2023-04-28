@@ -1,12 +1,12 @@
 mod background;
-pub mod cameras;
+pub mod camera;
 pub mod obstacles;
 pub mod playership;
 mod systems;
 mod ui;
 
 use bevy::prelude::*;
-use cameras::game_camera::GameCameraPlugin;
+use camera::game_camera::GameCameraPlugin;
 use obstacles::controller::ObstacleControllerPlugin;
 use playership::PlayerShipPlugin;
 
