@@ -5,5 +5,8 @@
 .\#*
 
 # Obsidian plugin data
+notebook/.obsidian/appearance.json
+notebook/.obsidian/app.json
+notebook/.obsidian/workspace.json
 notebook/.obsidian/plugins/*
 !notebook/.obsidian/plugins/*/data.json
