@@ -9,7 +9,6 @@ use bevy::prelude::*;
 use cameras::game_camera::GameCameraPlugin;
 use obstacles::controller::ObstacleControllerPlugin;
 use obstacles::nuke::NukePlugin;
-use obstacles::rocket::RocketPlugin;
 use playership::PlayerShipPlugin;
 
 use background::BackgroundPlugin;
@@ -36,7 +35,6 @@ impl Plugin for GamePlugin {
             .add_plugin(PlayerShipPlugin)
             .add_plugin(ObstacleControllerPlugin)
             .add_plugin(NukePlugin)
-            .add_plugin(RocketPlugin)
             .add_plugin(BackgroundPlugin)
             // UI
             .add_plugin(DebugUIPlugin);
