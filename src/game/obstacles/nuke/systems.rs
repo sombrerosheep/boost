@@ -4,10 +4,10 @@ use super::components::Nuke;
 
 const NUKE_SIZE: f32 = 64.0;
 
-pub fn spawn_nuke(mut commands: Commands) {
+pub fn spawn_nuke(commands: &mut Commands, x: f32, y: f32) {
     commands.spawn((
         SpriteBundle {
-            transform: Transform::from_xyz(100.0, 600.0, 0.0),
+            transform: Transform::from_xyz(x, y, 0.0),
             sprite: Sprite {
                 custom_size: Some(Vec2 {
                     x: NUKE_SIZE,

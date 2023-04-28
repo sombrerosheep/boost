@@ -8,7 +8,6 @@ mod ui;
 use bevy::prelude::*;
 use cameras::game_camera::GameCameraPlugin;
 use obstacles::controller::ObstacleControllerPlugin;
-use obstacles::nuke::NukePlugin;
 use playership::PlayerShipPlugin;
 
 use background::BackgroundPlugin;
@@ -34,7 +33,6 @@ impl Plugin for GamePlugin {
             .add_plugin(GameCameraPlugin)
             .add_plugin(PlayerShipPlugin)
             .add_plugin(ObstacleControllerPlugin)
-            .add_plugin(NukePlugin)
             .add_plugin(BackgroundPlugin)
             // UI
             .add_plugin(DebugUIPlugin);
