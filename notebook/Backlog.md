@@ -54,7 +54,7 @@
     - Intro
     - Gameplay
     - Game Over
-- [ ] subtle velocity for rocks #todo #gameplay 
+- [x] subtle velocity for rocks #todo #gameplay  @completed(2023-04-29T21:20:43)
     - always in -y (`+/-x`)
 - [x] sublte rotation for rocks #todo #gameplay  @completed(2023-04-29T16:54:41)
 - [x] obstacle controller #todo #gameplay  @completed(2023-04-28T03:40:43)

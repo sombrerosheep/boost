@@ -7,8 +7,6 @@ use bevy::prelude::*;
 use resources::*;
 use systems::*;
 
-use crate::game::obstacles::rock::systems::update_rock_rotation;
-
 pub struct ObstacleControllerPlugin;
 
 impl Plugin for ObstacleControllerPlugin {
@@ -25,7 +23,6 @@ impl Plugin for ObstacleControllerPlugin {
                 (
                     update_rock_spawn_timer,
                     spawn_rocks_with_timer,
-                    update_rock_rotation,
                     despawn_rocks_out_of_range,
                 )
                     .in_set(OnUpdate(GameState::Playing)),

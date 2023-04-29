@@ -2,16 +2,15 @@ mod background;
 pub mod camera;
 pub mod obstacles;
 pub mod playership;
-mod systems;
 mod ui;
 
+use background::BackgroundPlugin;
 use bevy::prelude::*;
 use camera::game_camera::GameCameraPlugin;
 use obstacles::controller::ObstacleControllerPlugin;
 use playership::PlayerShipPlugin;
 
-use background::BackgroundPlugin;
-
+use obstacles::{DrifterPlugin, TumblerPlugin};
 use ui::debug::DebugUIPlugin;
 
 #[derive(States, Debug, Clone, Copy, Eq, PartialEq, Hash, Default)]
@@ -32,6 +31,8 @@ impl Plugin for GamePlugin {
             // Plugins
             .add_plugin(GameCameraPlugin)
             .add_plugin(PlayerShipPlugin)
+            .add_plugin(DrifterPlugin)
+            .add_plugin(TumblerPlugin)
             .add_plugin(ObstacleControllerPlugin)
             .add_plugin(BackgroundPlugin)
             // UI

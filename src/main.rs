@@ -1,6 +1,5 @@
 use bevy::prelude::*;
 
-pub mod components;
 mod game;
 mod systems;
 
