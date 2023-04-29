@@ -1,8 +1,13 @@
 mod background;
 pub mod camera;
+pub mod drifter;
+pub mod nuke;
 pub mod obstacles;
 pub mod playership;
-pub mod drifter;
+pub mod rock;
+pub mod rocket;
+pub mod satellite;
+pub mod spacejunk;
 pub mod tumbler;
 mod ui;
 

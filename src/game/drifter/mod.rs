@@ -13,4 +13,3 @@ impl Plugin for DrifterPlugin {
             .add_system(update_drifter_position);
     }
 }
-

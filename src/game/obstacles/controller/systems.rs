@@ -5,11 +5,11 @@ use rand::prelude::*;
 
 use super::resources::*;
 use crate::game::camera::game_camera::components::GameCamera;
-use crate::game::obstacles::nuke::{components::*, systems::*};
-use crate::game::obstacles::rock::{components::*, systems::*};
-use crate::game::obstacles::rocket::{components::*, systems::*};
-use crate::game::obstacles::satellite::{components::*, systems::*};
-use crate::game::obstacles::spacejunk::{components::*, systems::*};
+use crate::game::nuke::{components::*, systems::*};
+use crate::game::rock::{components::*, systems::*};
+use crate::game::rocket::{components::*, systems::*};
+use crate::game::satellite::{components::*, systems::*};
+use crate::game::spacejunk::{components::*, systems::*};
 
 pub fn update_rock_spawn_timer(mut rock_spawn_timer: ResMut<RockSpawnTimer>, time: Res<Time>) {
     rock_spawn_timer.timer.tick(time.delta());
