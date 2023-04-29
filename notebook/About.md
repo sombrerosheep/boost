@@ -16,6 +16,12 @@ The game exists from Earth to the moon.
 - [ ] Is this only to the moon? #question 
 	- maybe there's a series of bad luck and we have to keep jumping from one likely location to the next?
 - [ ] How wide is the world? #question 
+- [ ] If the mission is to get to the moon, do we skip earths atmosphere? #question
+	- leaving the atmosphere is a big "breakthrough" from a layer of condensed junk/satellite?
+	- if this starts the level then we wont want it to impact players health
+		- One time automatic "burst/boost" that is automatic
+		- Can the player elect not to use this one time boost and reserve it for another part?
+		- This would start with a disadvantage but could add play diversity
 
 ## Mechanics
 
