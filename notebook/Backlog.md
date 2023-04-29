@@ -56,7 +56,7 @@
     - Game Over
 - [ ] subtle velocity for rocks #todo #gameplay 
     - always in -y (`+/-x`)
-- [ ] sublte rotation for rocks #todo #gameplay 
+- [x] sublte rotation for rocks #todo #gameplay  @completed(2023-04-29T16:54:41)
 - [x] obstacle controller #todo #gameplay  @completed(2023-04-28T03:40:43)
     - spawn obstacles at different rates
     - responsible for despawning off-camera
