@@ -1,4 +1,4 @@
-- [ ] Randomly spawn obstacles based on time #todo #gameplay
+- [x] Randomly spawn obstacles based on time #todo #gameplay @completed(2023-04-29T16:05:51)
     - use a single obstacles system with multiple timers
     - Different rates
         - Rocks (frequent)
@@ -68,7 +68,8 @@
     - we encounter them as they're en-route
 - [ ] AI for rockets #todo #gameplay 
     - some level of navigation ignoring all obstacles that are not the player
-- [ ] Add camera render layers #todo #architecture
+- [ ] Rendering layer by camera #todo #architecture
+    - Add camera render layers  
     - This doesn't actually dictate render order like I thought. To do that you'd need multiple cameras which can be done in an order. Each camera would then be assigned to layer(s)
     - alternative for draw order is using z corrdinates and maintaining the magic numbers for each types z-coordinate
     - See https://github.com/bevyengine/bevy/issues/1275
@@ -76,6 +77,8 @@
     - stars
     - player/obstacles
         - should these be together? #question
+- [x] Rendering layers: z-ordering #todo #gameplay  @completed(2023-04-29T16:05:44)
+	- quick solution without over complicating rendering layers + multiple cameras until I unerstand them better
 - [ ] Implement fuel #todo #gameplay
     - consumed at a slow rate
     - movement consumes slightly more

@@ -1,5 +1,6 @@
 use bevy::prelude::*;
 
+use crate::game::camera::game_camera::PLAYER_LAYER;
 use crate::game::playership::components::*;
 
 const PLAYERSHIP_SPEED: f32 = 325.0;
@@ -8,7 +9,7 @@ const PLAYERSHIP_SIZE: f32 = 32.0;
 pub fn spawn_player(mut commands: Commands) {
     commands.spawn((
         SpriteBundle {
-            transform: Transform::from_xyz(400.0, 400.0, 0.0),
+            transform: Transform::from_xyz(400.0, 400.0, PLAYER_LAYER),
             sprite: Sprite {
                 custom_size: Some(Vec2 {
                     x: PLAYERSHIP_SIZE,

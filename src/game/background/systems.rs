@@ -5,6 +5,7 @@ use super::components::*;
 use rand::prelude::*;
 
 use crate::game::camera::game_camera::components::GameCamera;
+use crate::game::camera::game_camera::BACKGROUND_LAYER;
 
 const NUM_STARS: u32 = 25;
 const STAR_SIZE: f32 = 1.0;
@@ -25,7 +26,7 @@ pub fn spawn_star(commands: &mut Commands, x: f32, y: f32) -> Entity {
     let star_entity = commands
         .spawn((
             SpriteBundle {
-                transform: Transform::from_xyz(x, y, 0.0),
+                transform: Transform::from_xyz(x, y, BACKGROUND_LAYER),
                 sprite: Sprite {
                     custom_size: Some(Vec2 {
                         x: STAR_SIZE,

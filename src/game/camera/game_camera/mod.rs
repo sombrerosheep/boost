@@ -5,6 +5,10 @@ use crate::game::GameState;
 use bevy::prelude::*;
 use systems::*;
 
+pub const BACKGROUND_LAYER: f32 = -1.0;
+pub const PLAYER_LAYER: f32 = -0.5;
+pub const OBSTACLES_LAYER: f32 = 0.0;
+
 pub struct GameCameraPlugin;
 
 impl Plugin for GameCameraPlugin {
