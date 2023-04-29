@@ -2,6 +2,8 @@ mod background;
 pub mod camera;
 pub mod obstacles;
 pub mod playership;
+pub mod drifter;
+pub mod tumbler;
 mod ui;
 
 use background::BackgroundPlugin;
@@ -10,7 +12,8 @@ use camera::game_camera::GameCameraPlugin;
 use obstacles::controller::ObstacleControllerPlugin;
 use playership::PlayerShipPlugin;
 
-use obstacles::{DrifterPlugin, TumblerPlugin};
+use drifter::DrifterPlugin;
+use tumbler::TumblerPlugin;
 use ui::debug::DebugUIPlugin;
 
 #[derive(States, Debug, Clone, Copy, Eq, PartialEq, Hash, Default)]

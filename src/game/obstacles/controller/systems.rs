@@ -47,9 +47,6 @@ pub fn spawn_rocks_with_timer(
     spawn_timer: Res<RockSpawnTimer>,
 ) {
     let window = window_query.get_single().unwrap();
-    let rotation_rand = random::<f32>();
-    let rotation_dir = if rotation_rand < 0.5 { 1.0 } else { -1.0 };
-    let rock_rotation = rotation_rand * MAX_ROTATION * rotation_dir;
 
     if spawn_timer.timer.finished() {
         if let Ok(camera_pos) = camera_query.get_single() {
@@ -61,7 +58,7 @@ pub fn spawn_rocks_with_timer(
             let random_y = random::<f32>() * window.height() + camera_top;
 
             // println!("spawning rock at: {}x{}", random_x, random_y);
-            spawn_rock(&mut commands, random_x, random_y, rock_rotation);
+            spawn_rock(&mut commands, random_x, random_y);
         }
     }
 }
