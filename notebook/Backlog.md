@@ -69,6 +69,9 @@
 - [ ] AI for rockets #todo #gameplay 
     - some level of navigation ignoring all obstacles that are not the player
 - [ ] Add camera render layers #todo #architecture
+    - This doesn't actually dictate render order like I thought. To do that you'd need multiple cameras which can be done in an order. Each camera would then be assigned to layer(s)
+    - alternative for draw order is using z corrdinates and maintaining the magic numbers for each types z-coordinate
+    - See https://github.com/bevyengine/bevy/issues/1275
     - https://bevy-cheatbook.github.io/features/camera.html#render-layers
     - stars
     - player/obstacles
