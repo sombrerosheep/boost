@@ -2,7 +2,6 @@ mod background;
 pub mod camera;
 pub mod drifter;
 pub mod nuke;
-pub mod obstacles;
 pub mod playership;
 pub mod rock;
 pub mod rocket;
@@ -14,11 +13,17 @@ mod ui;
 use background::BackgroundPlugin;
 use bevy::prelude::*;
 use camera::game_camera::GameCameraPlugin;
-use obstacles::controller::ObstacleControllerPlugin;
 use playership::PlayerShipPlugin;
 
 use drifter::DrifterPlugin;
 use tumbler::TumblerPlugin;
+
+use nuke::NukeSpawnerPlugin;
+use rock::RockSpawnerPlugin;
+use rocket::RocketSpawnerPlugin;
+use satellite::SatelliteSpawnerPlugin;
+use spacejunk::SpaceJunkSpawnerPlugin;
+
 use ui::debug::DebugUIPlugin;
 
 #[derive(States, Debug, Clone, Copy, Eq, PartialEq, Hash, Default)]
@@ -41,8 +46,12 @@ impl Plugin for GamePlugin {
             .add_plugin(PlayerShipPlugin)
             .add_plugin(DrifterPlugin)
             .add_plugin(TumblerPlugin)
-            .add_plugin(ObstacleControllerPlugin)
             .add_plugin(BackgroundPlugin)
+            .add_plugin(NukeSpawnerPlugin)
+            .add_plugin(RockSpawnerPlugin)
+            .add_plugin(RocketSpawnerPlugin)
+            .add_plugin(SatelliteSpawnerPlugin)
+            .add_plugin(SpaceJunkSpawnerPlugin)
             // UI
             .add_plugin(DebugUIPlugin);
     }
