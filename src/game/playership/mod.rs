@@ -17,8 +17,8 @@ impl Plugin for PlayerShipPlugin {
             // OnExit
             .add_system(despawn_player.in_schedule(OnExit(GameState::Playing)))
             // Systems
-            .add_system(
-                player_movement
+            .add_systems(
+                (player_movement, update_playership_fuel)
                     .in_set(OnUpdate(AppState::Game))
                     .in_set(OnUpdate(GameState::Playing)),
             );

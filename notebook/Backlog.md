@@ -21,6 +21,7 @@
 - [ ] Nukes Destroy obstacles within radius #todo #gameplay 
 - [ ] Collisions between obstacles and player I #todo #gameplay #collisions
     - reduces player health by a bit
+    - `bevy::sprite::collide_aabb`
 - [ ] Collisions between obstacles and player II #todo #gameplay #collisions 
     - objects velocity impacts damage taken
 - [ ] Collisions between obstacles and obstacles #todo #gameplay #collisions 
@@ -79,10 +80,18 @@
         - should these be together? #question
 - [x] Rendering layers: z-ordering #todo #gameplay  @completed(2023-04-29T16:05:44)
 	- quick solution without over complicating rendering layers + multiple cameras until I unerstand them better
-- [ ] Implement fuel #todo #gameplay
+- [x] Implement fuel #todo #gameplay @completed(2023-05-01T03:38:50)
     - consumed at a slow rate
     - movement consumes slightly more
 - [ ] Add UI for fuel #todo #ui
 - [ ] Implement ship health #todo #gameplay
     - collisions impacts health
 - [ ] Add UI for ship health #todo #ui
+- [ ] Input Resource #todo #architecture 
+    - abstract input into game actions
+    - handles keyboard/gamepad input
+- [ ] Drifter -> Velocity #todo #gameplay 
+- [ ] Replace player movement with velocity component #todo #gameplay 
+- [ ] Fuel usage by movement #todo #gameplay 
+	- use components velocity
+- [ ] Add fuel to obstacle rocket #todo #gameplay

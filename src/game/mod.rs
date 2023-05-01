@@ -1,6 +1,7 @@
 mod background;
 pub mod camera;
 pub mod drifter;
+pub mod fuel;
 pub mod nuke;
 pub mod playership;
 pub mod rock;
@@ -23,6 +24,8 @@ use rock::RockSpawnerPlugin;
 use rocket::RocketSpawnerPlugin;
 use satellite::SatelliteSpawnerPlugin;
 use spacejunk::SpaceJunkSpawnerPlugin;
+
+use fuel::FuelPlugin;
 
 use ui::debug::DebugUIPlugin;
 
@@ -52,6 +55,7 @@ impl Plugin for GamePlugin {
             .add_plugin(RocketSpawnerPlugin)
             .add_plugin(SatelliteSpawnerPlugin)
             .add_plugin(SpaceJunkSpawnerPlugin)
+            .add_plugin(FuelPlugin)
             // UI
             .add_plugin(DebugUIPlugin);
     }
