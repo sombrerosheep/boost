@@ -6,8 +6,8 @@ use super::components::Rock;
 use super::resources::*;
 use crate::game::camera::game_camera::components::*;
 use crate::game::camera::game_camera::OBSTACLES_LAYER;
-use crate::game::drifter::components::*;
 use crate::game::tumbler::components::*;
+use crate::game::velocity::components::*;
 
 const SPEED: f32 = 1.0;
 const ROCK_SIZE: f32 = 32.0;
@@ -41,7 +41,7 @@ pub fn spawn_rock(commands: &mut Commands, x: f32, y: f32) -> Entity {
                 },
                 ..default()
             },
-            Drifter {
+            Velocity {
                 velocity: Vec2::new(rock_vx, rock_vy),
                 speed: SPEED,
             },

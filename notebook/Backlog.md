@@ -90,7 +90,7 @@
 - [ ] Input Resource #todo #architecture 
     - abstract input into game actions
     - handles keyboard/gamepad input
-- [ ] Drifter -> Velocity #todo #gameplay 
+- [x] Drifter -> Velocity #todo #gameplay  @completed(2023-05-05T03:32:54)
 - [ ] Replace player movement with velocity component #todo #gameplay 
 - [ ] Fuel usage by movement #todo #gameplay 
 	- use components velocity

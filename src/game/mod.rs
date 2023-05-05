@@ -1,6 +1,5 @@
 mod background;
 pub mod camera;
-pub mod drifter;
 pub mod fuel;
 pub mod nuke;
 pub mod playership;
@@ -10,14 +9,15 @@ pub mod satellite;
 pub mod spacejunk;
 pub mod tumbler;
 mod ui;
+pub mod velocity;
 
 use background::BackgroundPlugin;
 use bevy::prelude::*;
 use camera::game_camera::GameCameraPlugin;
 use playership::PlayerShipPlugin;
 
-use drifter::DrifterPlugin;
 use tumbler::TumblerPlugin;
+use velocity::VelocityPlugin;
 
 use nuke::NukeSpawnerPlugin;
 use rock::RockSpawnerPlugin;
@@ -47,7 +47,7 @@ impl Plugin for GamePlugin {
             // Plugins
             .add_plugin(GameCameraPlugin)
             .add_plugin(PlayerShipPlugin)
-            .add_plugin(DrifterPlugin)
+            .add_plugin(VelocityPlugin)
             .add_plugin(TumblerPlugin)
             .add_plugin(BackgroundPlugin)
             .add_plugin(NukeSpawnerPlugin)

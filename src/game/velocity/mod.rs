@@ -4,12 +4,12 @@ mod systems;
 use bevy::prelude::*;
 use systems::*;
 
-pub struct DrifterPlugin;
+pub struct VelocityPlugin;
 
-impl Plugin for DrifterPlugin {
+impl Plugin for VelocityPlugin {
     fn build(&self, app: &mut App) {
         app
             // Systems
-            .add_system(update_drifter_position);
+            .add_system(apply_velocity_to_transform);
     }
 }
