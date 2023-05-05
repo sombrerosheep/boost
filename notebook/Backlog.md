@@ -91,7 +91,7 @@
     - abstract input into game actions
     - handles keyboard/gamepad input
 - [x] Drifter -> Velocity #todo #gameplay  @completed(2023-05-05T03:32:54)
-- [ ] Replace player movement with velocity component #todo #gameplay 
+- [x] Replace player movement with velocity component #todo #gameplay  @completed(2023-05-05T03:46:16)
 - [ ] Fuel usage by movement #todo #gameplay 
 	- use components velocity
 - [ ] Add fuel to obstacle rocket #todo #gameplay

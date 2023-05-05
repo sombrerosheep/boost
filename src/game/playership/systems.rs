@@ -3,6 +3,7 @@ use bevy::prelude::*;
 use crate::game::camera::game_camera::PLAYER_LAYER;
 use crate::game::fuel::Fuel;
 use crate::game::playership::components::*;
+use crate::game::velocity::components::Velocity;
 
 const PLAYERSHIP_SPEED: f32 = 325.0;
 const PLAYERSHIP_SIZE: f32 = 32.0;
@@ -24,6 +25,7 @@ pub fn spawn_player(mut commands: Commands) {
             },
             ..default()
         },
+        Velocity{ velocity: Vec2::ZERO, speed: PLAYERSHIP_SPEED },
         Fuel::new(PLAYERSHIP_FUEL_CAP, PLAYERSHIP_FUEL_RATE),
         PlayerShip {},
     ));
@@ -37,16 +39,15 @@ pub fn despawn_player(mut commands: Commands, playership_query: Query<Entity, Wi
 
 pub fn player_movement(
     keyboard_input: Res<Input<KeyCode>>,
-    mut player_query: Query<&mut Transform, With<PlayerShip>>,
+    mut velocity_query: Query<&mut Velocity, With<PlayerShip>>,
     fuel_query: Query<&Fuel, With<PlayerShip>>,
-    time: Res<Time>,
 ) {
     if let Ok(fuel) = fuel_query.get_single() {
         if fuel.level == 0.0 {
             println!("Playership is out of fuel")
         }
-        if let Ok(mut transform) = player_query.get_single_mut() {
-            let mut direction = Vec3::ZERO;
+        if let Ok(mut velocity) = velocity_query.get_single_mut() {
+            let mut direction = Vec2::ZERO;
 
             if keyboard_input.pressed(KeyCode::Left) || keyboard_input.pressed(KeyCode::A) {
                 direction.x = -1.0;
@@ -66,7 +67,7 @@ pub fn player_movement(
 
             direction = direction.normalize_or_zero();
 
-            transform.translation += direction * PLAYERSHIP_SPEED * time.delta_seconds();
+            velocity.velocity = direction;
         }
     }
 }
