@@ -9,7 +9,7 @@ use crate::game::camera::game_camera::OBSTACLES_LAYER;
 use crate::game::tumbler::components::*;
 use crate::game::velocity::components::*;
 
-const SPEED: f32 = 1.0;
+const ROCK_SPEED: f32 = 60.0;
 const ROCK_SIZE: f32 = 32.0;
 pub const MAX_ROTATION: f32 = 1.0;
 
@@ -43,7 +43,7 @@ pub fn spawn_rock(commands: &mut Commands, x: f32, y: f32) -> Entity {
             },
             Velocity {
                 velocity: Vec2::new(rock_vx, rock_vy),
-                speed: SPEED,
+                speed: ROCK_SPEED,
             },
             Tumbler {
                 rotation_speed: rock_rotation,
