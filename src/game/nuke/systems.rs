@@ -4,8 +4,8 @@ use rand::prelude::*;
 
 use super::components::Nuke;
 use super::resources::*;
-use crate::game::camera::game_camera::components::*;
-use crate::game::camera::game_camera::OBSTACLES_LAYER;
+use crate::game::game_camera::components::*;
+use crate::game::game_camera::OBSTACLES_LAYER;
 
 const NUKE_SIZE: f32 = 64.0;
 

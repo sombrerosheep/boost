@@ -1,5 +1,5 @@
 mod background;
-pub mod camera;
+pub mod game_camera;
 pub mod fuel;
 pub mod nuke;
 pub mod playership;
@@ -13,7 +13,7 @@ pub mod velocity;
 
 use background::BackgroundPlugin;
 use bevy::prelude::*;
-use camera::game_camera::GameCameraPlugin;
+use game_camera::GameCameraPlugin;
 use playership::PlayerShipPlugin;
 
 use tumbler::TumblerPlugin;

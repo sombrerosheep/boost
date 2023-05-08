@@ -4,8 +4,8 @@ use rand::prelude::*;
 
 use super::components::Rock;
 use super::resources::*;
-use crate::game::camera::game_camera::components::*;
-use crate::game::camera::game_camera::OBSTACLES_LAYER;
+use crate::game::game_camera::components::*;
+use crate::game::game_camera::OBSTACLES_LAYER;
 use crate::game::tumbler::components::*;
 use crate::game::velocity::components::*;
 

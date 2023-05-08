@@ -1,6 +1,6 @@
 use bevy::prelude::*;
 
-use crate::game::camera::game_camera::PLAYER_LAYER;
+use crate::game::game_camera::PLAYER_LAYER;
 use crate::game::fuel::Fuel;
 use crate::game::playership::components::*;
 use crate::game::velocity::components::Velocity;

@@ -4,8 +4,8 @@ use bevy::window::PrimaryWindow;
 use super::components::*;
 use rand::prelude::*;
 
-use crate::game::camera::game_camera::components::GameCamera;
-use crate::game::camera::game_camera::BACKGROUND_LAYER;
+use crate::game::game_camera::components::GameCamera;
+use crate::game::game_camera::BACKGROUND_LAYER;
 
 const NUM_STARS: u32 = 25;
 const STAR_SIZE: f32 = 1.0;

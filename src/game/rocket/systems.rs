@@ -4,8 +4,8 @@ use rand::prelude::*;
 
 use super::components::Rocket;
 use super::resources::*;
-use crate::game::camera::game_camera::components::*;
-use crate::game::camera::game_camera::OBSTACLES_LAYER;
+use crate::game::game_camera::components::*;
+use crate::game::game_camera::OBSTACLES_LAYER;
 
 const ROCKET_SIZE: Vec2 = Vec2::new(32.0, 64.0);
 
