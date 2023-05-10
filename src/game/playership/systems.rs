@@ -1,7 +1,7 @@
 use bevy::prelude::*;
 
-use crate::game::game_camera::PLAYER_LAYER;
 use crate::game::fuel::Fuel;
+use crate::game::game_camera::PLAYER_LAYER;
 use crate::game::playership::components::*;
 use crate::game::velocity::components::Velocity;
 
@@ -25,7 +25,10 @@ pub fn spawn_player(mut commands: Commands) {
             },
             ..default()
         },
-        Velocity{ velocity: Vec2::ZERO, speed: PLAYERSHIP_SPEED },
+        Velocity {
+            velocity: Vec2::ZERO,
+            speed: PLAYERSHIP_SPEED,
+        },
         Fuel::new(PLAYERSHIP_FUEL_CAP, PLAYERSHIP_FUEL_RATE),
         PlayerShip {},
     ));

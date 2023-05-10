@@ -83,7 +83,7 @@
 - [x] Implement fuel #todo #gameplay @completed(2023-05-01T03:38:50)
     - consumed at a slow rate
     - movement consumes slightly more
-- [ ] Add UI for fuel #todo #ui
+- [x] Add UI for fuel #todo #ui @completed(2023-05-10T03:41:34)
 - [ ] Implement ship health #todo #gameplay
     - collisions impacts health
 - [ ] Add UI for ship health #todo #ui

@@ -1,6 +1,6 @@
 mod background;
-pub mod game_camera;
 pub mod fuel;
+pub mod game_camera;
 pub mod nuke;
 pub mod playership;
 pub mod rock;
@@ -28,6 +28,7 @@ use spacejunk::SpaceJunkSpawnerPlugin;
 use fuel::FuelPlugin;
 
 use ui::debug::DebugUIPlugin;
+use ui::gamehud::GameHudPlugin;
 
 #[derive(States, Debug, Clone, Copy, Eq, PartialEq, Hash, Default)]
 pub enum GameState {
@@ -57,6 +58,7 @@ impl Plugin for GamePlugin {
             .add_plugin(SpaceJunkSpawnerPlugin)
             .add_plugin(FuelPlugin)
             // UI
-            .add_plugin(DebugUIPlugin);
+            .add_plugin(DebugUIPlugin)
+            .add_plugin(GameHudPlugin);
     }
 }
