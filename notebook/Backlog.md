@@ -95,3 +95,7 @@
 - [ ] Fuel usage by movement #todo #gameplay 
 	- use components velocity
 - [ ] Add fuel to obstacle rocket #todo #gameplay
+- [ ] Always a random chance you'll explode in the first 5s of the game #idea #achievement 
+	- [ ] just for fun
+	- [ ] it'll should be very rare
+	- [ ] but maybe an achievement 

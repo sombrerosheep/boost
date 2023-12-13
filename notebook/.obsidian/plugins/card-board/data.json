@@ -1,0 +1,75 @@
+{
+  "version": "0.10.0",
+  "data": {
+    "boardConfigs": [
+      {
+        "tag": "tagBoardConfig",
+        "data": {
+          "columns": [
+            {
+              "tag": "gameplay",
+              "displayTitle": "Gameplay"
+            },
+            {
+              "tag": "art",
+              "displayTitle": "Art"
+            },
+            {
+              "tag": "ui",
+              "displayTitle": "UI"
+            },
+            {
+              "tag": "question",
+              "displayTitle": "Question"
+            },
+            {
+              "tag": "sound",
+              "displayTitle": "Audio"
+            },
+            {
+              "tag": "architecture",
+              "displayTitle": "Architecture"
+            },
+            {
+              "tag": "todo",
+              "displayTitle": "ToDo"
+            },
+            {
+              "tag": "idea",
+              "displayTitle": "Ideas"
+            },
+            {
+              "tag": "achievement",
+              "displayTitle": "Achievement"
+            }
+          ],
+          "showColumnTags": true,
+          "completedCount": 10,
+          "filters": [],
+          "filterPolarity": "Allow",
+          "filterScope": "Both",
+          "showFilteredTags": true,
+          "includeOthers": true,
+          "includeUntagged": false,
+          "title": "Boost",
+          "collapsedColumns": [
+            9
+          ]
+        }
+      }
+    ],
+    "globalSettings": {
+      "taskCompletionFormat": "ObsidianCardBoard",
+      "columnNames": {
+        "today": "",
+        "tomorrow": "",
+        "future": "",
+        "undated": "",
+        "others": "",
+        "untagged": "",
+        "completed": ""
+      },
+      "ignoreFileNameDates": false
+    }
+  }
+}
